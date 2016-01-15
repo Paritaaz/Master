@@ -23,7 +23,7 @@ if ($_GET['screen_name']) {
 }
 
 if ($_GET['twitter_path']) { $twitter_path = $_GET['twitter_path']; }  else {
-	$twitter_path = '1.1/statuses/user_timeline.json';
+	$twitter_path = '1.1/search/tweets.json?q=srbachan&src=typd&count=10 ';
 }
 
 $http_code = $connection->request('GET', $connection->url($twitter_path), $parameters );
