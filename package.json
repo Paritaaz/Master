@@ -9,12 +9,13 @@
   },
   "main": "read-json.js",
   "scripts": {
+	"start" : "node server.js",
     "test": "standard && tap test/*.js"
   },
   "dependencies": {
-    "glob": "^6.0.0",
-    "json-parse-helpfulerror": "^1.0.2",
-    "normalize-package-data": "^2.0.0"
+    "express": "*",
+    "restler": "*",
+    "oauth": "*"
   },
   "devDependencies": {
     "standard": "^5.3.1",
