@@ -33,7 +33,7 @@
 	<script>
 	 $("#submbttn").click(function () {
 	 var movie = $("#textbox").val();
-	 $.get("http://localhost:3010/api/"+movie,function(data) 
+	 $.get("./api/"+movie,function(data) 
 		{ 
 			var x = JSON.stringify(data.Title);
             var y = JSON.stringify(data.Year);
