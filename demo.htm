@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ImDb Feed</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <script src="./jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+	 
+  </head>
+	
+<body>
+	<br>
+	<h1>    Get Poster</h1>
+	<form><br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	Enter the Name of the movie:<br>&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="firstname" size="35" id="textbox"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
+	<script></script>
+	</form>
+	<button type="button" class="btn btn-primary" id="submbttn">Submit</button>
+	
+	<div class="demo-container">
+
+		<div class="demo-box" id="democon">Result Box</div>
+	</div>
+	
+	<script>
+	 $("#submbttn").click(function () {
+	 var movie = $("#textbox").val();
+	 $.get("http://www.omdbapi.com/?t="+movie+"&y=&plot=shlort&r=json",function(data) 
+		{ 
+			var x = JSON.stringify(data);
+			$( "#democon" ).html(x);
+			//alert(data);
+		},"json");
+		});
+		
+	 
+	 
+	 </script>
+
+</body>
+
+</html>
