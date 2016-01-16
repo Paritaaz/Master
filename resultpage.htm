@@ -14,7 +14,6 @@
   </head>
 	
 <body>
-
 	<br>
 	<h1>    Get Poster</h1>
 	<form><br><br>
@@ -26,8 +25,9 @@
 	<button type="button" class="btn btn-primary" id="submbttn">Submit</button>
 	
 	<div class="demo-container">
-
 		<div class="demo-box" id="democon">Result Box</div>
+		<div class="demo-box" id="democon1"></div>
+		<div class="demo-box" id="democon2"></div>
 	</div>
 	
 	<script>
@@ -35,16 +35,23 @@
 	 var movie = $("#textbox").val();
 	 $.get("http://localhost:3010/api/"+movie,function(data) 
 		{ 
-			va
-			//var x = JSON.parse(data);
-			$( "#democon" ).html(x);
-			//alert(data);
+			var x = JSON.stringify(data.Title);
+            var y = JSON.stringify(data.Year);
+            var z = JSON.stringify(data.Poster);
+			var images = '<img src=' + z +  ' />';
+			
+			document.getElementById( 'democon2' ).innerHTML = images;
+
+            $( "#democon" ).html(x); 
+			$( "#democon1" ).html(y);
 		},"json");
 		});
 		
 	 
 	 
 	 </script>
+	 
+
 
 </body>
 
