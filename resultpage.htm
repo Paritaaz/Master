@@ -4,24 +4,31 @@
   <title>ImDb Feed</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+  
 
-	<!-- jQuery library -->
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 
-	<!-- Latest compiled JavaScript -->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	 
   </head>
 	
 <body>
+	<br><br>
+	<h1>	Click to autherize first</h1>
+	<button type="button" class="btn btn-primary" id="authbttn">Authorize</button>
+	<br><br>
+	<span id='timeline_results'></span>
 	<br>
 	<h1>    Get Poster</h1>
 	<form><br><br>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	Enter the Name of the movie:<br>&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	
 	<input type="text" name="firstname" size="35" id="textbox"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
 	<script></script>
 	</form>
@@ -33,10 +40,16 @@
 		<div class="demo-box" id="democon2"></div>
 	</div>
 	
+
 	<script>
+
+	 $("#authbttn").click(function () {
+		window.location.href = "http://pnnapp.azurewebsites.net/auth/twitter";
+	 });
+	
 	 $("#submbttn").click(function () {
 	 var movie = $("#textbox").val();
-	 $.get("./api/"+movie,function(data) 
+	 $.get("http://localhost:3010/api/"+movie,function(data) 
 		{ 
 			var x = JSON.stringify(data.Title);
             var y = JSON.stringify(data.Year);
