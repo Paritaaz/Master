@@ -94,6 +94,6 @@ app.get('/api/:name', function(req, res) {
 });
 
 
-app.listen(3000, function () {
+app.listen(process.env.port, function () {
   console.log('Example app listening on port 3010!');
 })
